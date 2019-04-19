@@ -14,7 +14,7 @@ This Plugin allows you to score Elasticsearch documents based on embedding-vecto
 
 ## General
 * This plugin was ported from [This elasticsearch 5.x vector scoring plugin](https://github.com/MLnick/elasticsearch-vector-scoring) and [this discussion](https://discuss.elastic.co/t/vector-scoring/85227/6) and  [lior-k](https://github.com/lior-k)'s original contribution for ElasticSearch 5.5+ to achieve lightning fast result times when searching across millions of documents.
-* This port is for ElasticSearch 6.4+ (now 7.0.0-beta1) utilizing the ScoreScript class which was officially split from SearchScript and thus incompatible < 6.4.x
+* This port is for ElasticSearch 6.4+ (now 7.0.0) utilizing the ScoreScript class which was officially split from SearchScript and thus incompatible < 6.4.x
 
 ## Improvements
 * lior-k's implementation had some confusing variable assignments that did not consistently match with Cosine-Sim's [mathematical definition](https://en.wikipedia.org/wiki/Cosine_similarity#Definition). This has been updated in the code to more accurately reflect the mathematical definition.
@@ -24,7 +24,7 @@ This Plugin allows you to score Elasticsearch documents based on embedding-vecto
 
 
 ## Elasticsearch version
-* Currently designed for Elasticsearch 7.0.0-beta1
+* Currently designed for Elasticsearch 7.0.0
 * Plugin is NOT backwards compatible (see note above about ScoreScript class)
 * Will succesfully build for 7.0.0 (latest). Simply modify pom.xml with the correct version then follow gradle build steps below.
 
@@ -32,7 +32,8 @@ This Plugin allows you to score Elasticsearch documents based on embedding-vecto
 ## Gradle Build Steps
 * Clone the project
 * Then either `./gradlew build` to build and run tests or;
-* Run `./gradlew bundlePlugin` to compile the plugin as a zip file
+* `./gradlew integTestRunner` for just the integration tests or;
+* Run `./gradlew bundlePlugin` to compile the plugin as a zip file. You'll find the output at `build/distributions/fast-cosine-similarity-7.0.0.zip`
 * In Elasticsearch run `elasticsearch-plugin install file://PATH_TO_ZIP` to install plugin
 
 ## Why embeddings?
