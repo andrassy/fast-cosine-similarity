@@ -1,4 +1,4 @@
-image: gradle:alpine
+image: gradle:5.4.0-jre11-slim
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
