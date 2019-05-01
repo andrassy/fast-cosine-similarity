@@ -1,4 +1,4 @@
-image: java:10
+image: registry.gitlab.com/sw4j-net/jdk11-maven3
 
 stages:
   - build
