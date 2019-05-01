@@ -1,0 +1,13 @@
+image: java:10
+
+stages:
+  - build
+  - package
+
+build:
+  stage: build
+  script: ./gradlew build
+
+package:
+  stage: package
+  script: ./gradlew bundlePlugin
