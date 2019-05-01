@@ -1,4 +1,8 @@
 image: hirokimatsumoto/alpine-openjdk-11
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
 stages:
   - build
   - package
