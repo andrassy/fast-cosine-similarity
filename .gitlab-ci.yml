@@ -1,7 +1,10 @@
-image: hirokimatsumoto/alpine-openjdk-11
+image: gradle:alpine
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+  
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
 
 stages:
   - build
