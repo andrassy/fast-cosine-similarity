@@ -1,5 +1,4 @@
-image: registry.gitlab.com/sw4j-net/jdk11-maven3
-
+image: openjdk:11.0.3-jdk-slim
 stages:
   - build
   - package
