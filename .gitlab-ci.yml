@@ -1,4 +1,4 @@
-image: openjdk:11-jdk-slim
+image: openjdk:12.0-jdk-oracle
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
@@ -12,7 +12,11 @@ stages:
 
 build:
   stage: build
-  script: ./gradlew build --console=plain
+  script: ./gradlew integTestRunner --console=plain
+  artifacts:
+    paths:
+      - reports/profile/
+    expire_in: 1 hours
 
 package:
   stage: package
