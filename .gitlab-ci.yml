@@ -12,8 +12,8 @@ stages:
 
 build:
   stage: build
-  script: ./gradlew build
+  script: ./gradlew build --console=plain
 
 package:
   stage: package
-  script: ./gradlew bundlePlugin
+  script: ./gradlew bundlePlugin --console=plain
