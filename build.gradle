@@ -69,7 +69,7 @@ dependencies {
 }
 
 test {
-  jvmArgs "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap"
+  jvmArgs "-XX:+UseContainerSupport"
 }
 
 // no unit tests
