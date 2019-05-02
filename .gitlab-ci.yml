@@ -12,7 +12,7 @@ stages:
 
 build:
   stage: build
-  script: ./gradlew integTestRunner --console=plain
+  script: ./gradlew integTestRunner --console=plain --profile
   artifacts:
     paths:
       - reports/profile/
@@ -20,4 +20,4 @@ build:
 
 package:
   stage: package
-  script: ./gradlew bundlePlugin --console=plain
+  script: ./gradlew bundlePlugin --console=plain --profile
