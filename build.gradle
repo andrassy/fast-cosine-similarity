@@ -68,6 +68,10 @@ dependencies {
   }
 }
 
+test {
+  jvmArgs "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap"
+}
+
 // no unit tests
 test.enabled = false
 
