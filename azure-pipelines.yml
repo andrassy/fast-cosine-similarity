@@ -24,7 +24,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'ls'
+    script: 'ls build && ls distributions'
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'fast-cosine-similarity-plugin'
