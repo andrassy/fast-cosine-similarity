@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+  branches:
+    include:
+    - '*'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -21,11 +23,11 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'bundlePlugin'
-- task: Bash@3
+- task: CopyFiles@4
   inputs:
-    targetType: 'inline'
-    script: 'ls build && ls build/distributions'
-- task: PublishPipelineArtifact@0
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: 'build/distributions/**/?(*.zip)'
+- task: PublishBuildArtifacts@5
   inputs:
-    artifactName: 'fast-cosine-similarity-plugin'
-    targetPath: 'build/distributions/*.zip'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: fast-cosine-similarity-plugin.zip
