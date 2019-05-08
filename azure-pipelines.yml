@@ -21,3 +21,7 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'bundlePlugin'
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'fast-cosine-similarity-plugin'
+    targetPath: 'build/distributions/*.zip'
