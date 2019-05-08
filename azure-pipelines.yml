@@ -3,11 +3,6 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
-trigger:
-  branches:
-    include:
-    - '*'
-
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -23,11 +18,11 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'bundlePlugin'
-- task: CopyFiles@4
+- task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
     contents: 'build/distributions/**/?(*.zip)'
-- task: PublishBuildArtifacts@5
+- task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: fast-cosine-similarity-plugin.zip
