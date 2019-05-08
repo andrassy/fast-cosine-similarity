@@ -31,3 +31,14 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: '**/Dockerfile'
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'AWS DevelopmentPowerUser'
+    regionName: 'eu-west-1'
+    imageSource: 'imagename'
+    sourceImageTag: 
+    repositoryName: 'search-squad/gs2/elasticsearch-fast-cosine-similarity'
+    pushTag: 'neil'
+    autoCreateRepository: true
+    logRequest: true
+    logResponse: true
