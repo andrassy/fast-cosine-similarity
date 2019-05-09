@@ -40,7 +40,8 @@ steps:
     imageSource: imagename
     sourceImageName: 'andrassy/elasticsearch-fast-cosine-similarity'
     sourceImageTag: '$(Build.BuildId)'
-    repositoryName: 'neil-andrassy/andrassy/elasticsearch-fast-cosine-similarity'
+    pushTag: '$(Build.BuildId)'
+    repositoryName: 'neil-andrassy/$(Build.SourceBranch)/elasticsearch-fast-cosine-similarity'
     autoCreateRepository: true
     logRequest: true
     logResponse: true
