@@ -8,6 +8,9 @@ name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.rr)
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  elasticImageName: '$(Build.RequestedFor)/elasticsearch-fast-cosine-similarity'
+
 steps:
 - task: Gradle@2
   inputs:
@@ -34,16 +37,16 @@ steps:
   inputs:
     command: Build an image
     Dockerfile: '**/Dockerfile'
-    imageName: 'andrassy/elasticsearch-fast-cosine-similarity:$(Build.BuildId)'
+    imageName: '$(elasticImageName):$(Build.BuildNumber)'
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'AWS DevelopmentPowerUser'
     regionName: 'eu-west-1'
     imageSource: imagename
-    sourceImageName: 'andrassy/elasticsearch-fast-cosine-similarity'
-    sourceImageTag: '$(Build.BuildId)'
-    pushTag: '$(Build.BuildId)'
-    repositoryName: 'neil-andrassy/$(Build.SourceBranch)/elasticsearch-fast-cosine-similarity'
+    sourceImageName: '$(elasticImageName)'
+    sourceImageTag: '$(Build.BuildNumber)'
+    pushTag: '$(Build.BuildNumber)'
+    repositoryName: '$(elasticImageName)'
     autoCreateRepository: true
     logRequest: true
     logResponse: true
