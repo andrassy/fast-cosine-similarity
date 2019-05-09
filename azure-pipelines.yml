@@ -9,7 +9,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  elasticImageName: '$(Build.RequestedFor)/elasticsearch-fast-cosine-similarity'
+  elasticImageName: 'cookpad/elasticsearch-fast-cosine-similarity'
 
 steps:
 - task: Gradle@2
