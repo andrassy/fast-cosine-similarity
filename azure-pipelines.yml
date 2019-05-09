@@ -11,7 +11,8 @@ steps:
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m --no-daemon'
+    options: '--no-daemon'
+    gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.12'
     jdkArchitectureOption: 'x64'
@@ -37,8 +38,9 @@ steps:
     awsCredentials: 'AWS DevelopmentPowerUser'
     regionName: 'eu-west-1'
     imageSource: imagename
-    sourceImageName: 'andrassy/elasticsearch-fast-cosine-similarity:$(Build.BuildId)'
-    repositoryName: 'search-squad/neil-andrassy'
+    sourceImageName: 'andrassy/elasticsearch-fast-cosine-similarity'
+    sourceImageTag: '$(Build.BuildId)'
+    repositoryName: 'neil-andrassy'
     autoCreateRepository: true
     logRequest: true
     logResponse: true
