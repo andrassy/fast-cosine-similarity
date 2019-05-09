@@ -37,7 +37,8 @@ steps:
     awsCredentials: 'AWS DevelopmentPowerUser'
     regionName: 'eu-west-1'
     imageSource: 'imagename'
-    sourceImageTag: elasticsearch-fast-cosine-similarity:$(Build.BuildId)
+    sourceImageName: elasticsearch-fast-cosine-similarity
+    sourceImageTag: $(Build.BuildId)
     repositoryName: 'search-squad/neil-andrassy'
     autoCreateRepository: true
     logRequest: true
