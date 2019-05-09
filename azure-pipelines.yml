@@ -31,14 +31,14 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: elasticsearch-fast-cosine-similarity:$(Build.BuildId)
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'AWS DevelopmentPowerUser'
     regionName: 'eu-west-1'
     imageSource: 'imagename'
-    sourceImageTag: 
-    repositoryName: 'search-squad/gs2/elasticsearch-fast-cosine-similarity'
-    pushTag: 'neil'
+    sourceImageTag: elasticsearch-fast-cosine-similarity:$(Build.BuildId)
+    repositoryName: 'search-squad/neil-andrassy'
     autoCreateRepository: true
     logRequest: true
     logResponse: true
