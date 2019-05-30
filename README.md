@@ -24,9 +24,8 @@ This Plugin allows you to score Elasticsearch documents based on embedding-vecto
 
 
 ## Elasticsearch version
-* Currently designed for Elasticsearch 7.0.0-beta1
+* Currently designed for Elasticsearch 7.1.1
 * Plugin is NOT backwards compatible (see note above about ScoreScript class)
-* Will succesfully build for 7.0.0 (latest). Simply modify pom.xml with the correct version then follow gradle build steps below.
 
 
 ## Gradle Build Steps
