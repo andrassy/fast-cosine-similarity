@@ -14,6 +14,7 @@ buildscript {
 
 plugins {
   id "me.champeau.gradle.jmh" version "0.4.7"
+  id 'net.researchgate.release' version '2.6.0'
 }
 
 apply plugin: 'java'
@@ -124,6 +125,31 @@ idea {
   project {
     vcs = 'Git'
   }
+}
+
+release {
+    failOnCommitNeeded = false
+    failOnPublishNeeded = true
+    failOnSnapshotDependencies = true
+    failOnUnversionedFiles = true
+    failOnUpdateNeeded = true
+    revertOnFail = true
+    preCommitText = ''
+    preTagCommitMessage = '[Gradle Release Plugin] - pre tag commit: '
+    tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
+    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
+    tagTemplate = '${version}'
+    versionPropertyFile = 'gradle.properties'
+    versionProperties = []
+    buildTasks = ['build']
+    
+    git {
+        requireBranch = ''
+        pushToRemote = 'origin'
+        pushToBranchPrefix = ''
+        commitVersionFileOnly = false
+        signTag = false
+    }
 }
 
 // Make sure gradle idea was run before running anything in intellij (including import).
