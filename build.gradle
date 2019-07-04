@@ -141,7 +141,7 @@ release {
     tagTemplate = '${version}'
     versionPropertyFile = 'gradle.properties'
     versionProperties = []
-    buildTasks = ['build']
+    buildTasks = ['bundlePlugin']
     
     git {
         requireBranch = ''
