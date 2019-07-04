@@ -130,7 +130,7 @@ idea {
 release {
     failOnCommitNeeded = false
     failOnPublishNeeded = true
-    failOnSnapshotDependencies = true
+    failOnSnapshotDependencies = false
     failOnUnversionedFiles = true
     failOnUpdateNeeded = true
     revertOnFail = true
