@@ -24,14 +24,15 @@ This Plugin allows you to score Elasticsearch documents based on embedding-vecto
 
 
 ## Elasticsearch version
-* Currently designed for Elasticsearch 7.2.0
+* Currently designed for Elasticsearch 7.4.0
 * Plugin is NOT backwards compatible (see note above about ScoreScript class)
 
 
 ## Gradle Build Steps
 * Clone the project
 * Then either `./gradlew build` to build and run tests or;
-* Run `./gradlew bundlePlugin` to compile the plugin as a zip file
+* `./gradlew integTestRunner` for just the integration tests or;
+* `./gradlew bundlePlugin` build plugin as a zip file, without other verification steps. You'll find the output at `build/distributions/fast-cosine-similarity-7.y.z.zip`.
 * In Elasticsearch run `elasticsearch-plugin install file://PATH_TO_ZIP` to install plugin
 
 ## Why embeddings?
