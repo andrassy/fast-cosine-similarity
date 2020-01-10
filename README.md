@@ -1,5 +1,11 @@
 ![alt text](http://staysense.com/img/staysense-logo.png "StaySense Orchestrator")
 
+_**REPOSITORY ARCHIVED** This repository has been archived. Elasticsearch's
+[`dense_vector`](https://www.elastic.co/guide/en/elasticsearch/reference/current/dense-vector.html)
+type replaces the need for a third-party plugin. See
+[elasticsearch-nn-benchmarks](https://github.com/mattjw/elasticsearch-nn-benchmarks)
+for performance comparison between `dense_vector` and Fast Cosine Similarity._
+
 StaySense - Fast Cosine Similarity ElasticSearch Plugin
 ================================
 Extremely fast vector scoring on ElasticSearch 6.4.x+ using vector embeddings.
